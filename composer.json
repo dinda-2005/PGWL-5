@@ -1,0 +1,15 @@
+{
+    "name": "tiara/pgwl2026",
+    "autoload": {
+        "psr-4": {
+            "Tiara\\Pgwl2026\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dinda-2005",
+            "email": "dindatiarauriadi2005@mail.ugm.ac.id"
+        }
+    ],
+    "require": {}
+}
