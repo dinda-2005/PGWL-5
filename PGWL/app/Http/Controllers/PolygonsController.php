@@ -62,4 +62,26 @@ class PolygonsController extends Controller
 
         return redirect()->route('peta')->with('error', 'Gagal menyimpan data polygon.');
     }
+    public function destroy(string $id)
+    {
+        // Mencari nama file gambar berdasarkan id
+    $polygons = $this->polygons->find($id);
+    $imagefile = $polygons ? $polygons->image : null;
+
+    //Hapus file gambar jika ada
+    if($imagefile != null){
+        if (file_exists('./storage/images/' . $imagefile)) {
+            unlink('./storage/images/'. $imagefile);
+        }
+    }
+
+    // Hapus data dari database
+    if (!$this->polygons->destroy($id)) {
+        return redirect()->route('peta')
+            ->with('error', 'Gagal menghapus data polygons.');
+    }
+    // Kembali ke halaman peta
+    return redirect()->route('peta')
+        ->with('success', 'Data polygons berhasil dihapus.');
+    }
 }
