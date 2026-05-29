@@ -15,8 +15,22 @@
             </li>
             <li class="nav-item">
             <a class="nav-link" href="{{ route('tabel') }}"><i class="fa-solid fa-table"></i>Tabel</a>
+            <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-circle-info"></i>Tentang</a>
             </li>
-
+            @guest
+            <li class="nav-item bg-primary rounded">
+            <a class="nav-link text-white" href="{{ route('login') }}"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+            </li>
+            @endguest
+            @auth
+            <li class="nav-item bg-danger rounded">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="nav-link text-white"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+                </form>
+            </li>
+            @endauth
         </ul>
         </div>
     </div>
