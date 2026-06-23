@@ -87,7 +87,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <script>
-        var map = L.map('map').setView([-7.7956, 110.3695], 12);
+        var map = L.map('map').setView([-7.3145, 110.1768], 12);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,

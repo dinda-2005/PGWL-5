@@ -16,6 +16,8 @@ Route::get('/peta', [PageController::class, 'peta'])->middleware(['auth', 'verif
 
 Route::get('/tabel', [PageController::class, 'tabel'])->name('tabel');
 
+Route::get('/tentang', [PageController::class, 'tentang'])->name('tentang');
+
 //Points
 Route::post('/store-points', [PointsController::class, 'store'])->name('points.store');
 
@@ -25,19 +27,6 @@ Route::get('/edit-point/{id}', [PointsController::class, 'edit'])->name('point.e
 
 //Route update point berdasarkan id
 Route::patch('/update-point/{id}', [PointsController::class, 'update'])->name('point.update');
-
-
-
-//Polyline
-Route::post('/store-polylines', [PolylinesController::class, 'store'])->name('polylines.store');
-
-Route::delete('/delete-polylines/{id}', [PolylinesController::class, 'destroy'])->name('polylines.delete');
-
-Route::get('/edit-polyline/{id}', [PolylinesController::class, 'edit'])->name('polyline.edit');
-
-//Route update polyline berdasarkan id
-Route::patch('/update-polyline/{id}', [PolylinesController::class, 'update'])->name('polyline.update');
-
 
 
 //Polygon
